@@ -1,0 +1,18 @@
+[{
+    "toolSpec": {
+        "name": "confluence",
+        "description": "Retrieve information from Arlo Confluence",
+        "inputSchema": {
+            "json": {
+                "type": "object",
+                "properties": {
+                    "cql": {
+                        "type": "string",
+                        "description": "A Confluence query using cql syntax. Do not specify space"
+                    }
+                },
+                "required": ["cql"]
+            }
+        }
+    }
+}]
