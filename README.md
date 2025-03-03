@@ -1,4 +1,4 @@
-# Minimal chatbot with access to Conflence
+# Minimal chatbot with Confluence access
 
 ## Stack
 - Chainlit
