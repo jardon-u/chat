@@ -1,29 +1,36 @@
-# Minimal chatbot with Confluence access
+# Minimal AI Agents
 
-## Stack
-- Chainlit
-- Atlassian Confluence SDK
-- AWS Bedrock
+You don't need an agentic framework to start building agents.
+
+## Agents
+
+| Agent | What it does | Run |
+|-------|--------------|-----|
+| `agent_web.py` | Fetch & summarize any URL | `python agent_web.py` |
+| `agent_shell.py` | Run shell commands (with approval) | `python agent_shell.py` |
+| `agent_stock.py` | Get stock prices | `python agent_stock.py` |
+| `agent_github.py` | Search GitHub code | `python agent_github.py` |
+
+Each agent is ~25 lines. Same pattern, different tools.
+
+## The Pattern
+
+```python
+while True:
+    response = llm.call(messages, tools)
+    if response.done: break
+    result = execute(response.tool_call)
+    messages.append(result)
+```
 
 ## Setup
-1. Install requirements
+
 ```bash
-pip install -r requirements.txt
+pip install boto3 requests beautifulsoup4
 ```
 
-2. Set up environment variables
-```bash
-export CONFLUENCE_URL=https://<your-confluence-url>
-export CONFLUENCE_TOKEN=<your-confluence-token>
-```
+Requires AWS credentials with Bedrock access.
 
-3. Request access to Claude Sonnet 3.7 on AWS Bedrock
-- Go to AWS console > Amazon Bedrock > Claude Sonnet 3.7
-- Click on "Request Access" and wait for approval
-- If you use a different model or use it outside the US, update MODEL_ID in mini.py
-- For Cross-Region models, take the model id from Amazon Bedrock > Cross-region inference
+## Also
 
-4. Run the chatbot
-```bash
-chainlit run mini.py -w
-```
+`mini.py` - Chatbot with Confluence access (requires Chainlit + Atlassian SDK)

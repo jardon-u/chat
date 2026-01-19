@@ -1,0 +1,15 @@
+[{
+  "toolSpec": {
+    "name": "fetch_url",
+    "description": "Fetch and extract text content from a URL",
+    "inputSchema": {
+      "json": {
+        "type": "object",
+        "properties": {
+          "url": {"type": "string", "description": "URL to fetch"}
+        },
+        "required": ["url"]
+      }
+    }
+  }
+}]

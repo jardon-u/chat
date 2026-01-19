@@ -1,0 +1,15 @@
+[{
+  "toolSpec": {
+    "name": "get_stock_price",
+    "description": "Get current stock price by ticker symbol",
+    "inputSchema": {
+      "json": {
+        "type": "object",
+        "properties": {
+          "symbol": {"type": "string", "description": "Stock ticker symbol (e.g. AAPL, NVDA, GOOGL)"}
+        },
+        "required": ["symbol"]
+      }
+    }
+  }
+}]

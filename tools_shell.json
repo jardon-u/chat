@@ -1,0 +1,15 @@
+[{
+  "toolSpec": {
+    "name": "shell",
+    "description": "Run a shell command and return output",
+    "inputSchema": {
+      "json": {
+        "type": "object",
+        "properties": {
+          "command": {"type": "string", "description": "Shell command to execute"}
+        },
+        "required": ["command"]
+      }
+    }
+  }
+}]

@@ -1,0 +1,15 @@
+[{
+  "toolSpec": {
+    "name": "search_github",
+    "description": "Search for code on GitHub",
+    "inputSchema": {
+      "json": {
+        "type": "object",
+        "properties": {
+          "query": {"type": "string", "description": "Search query for GitHub code search"}
+        },
+        "required": ["query"]
+      }
+    }
+  }
+}]

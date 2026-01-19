@@ -1,3 +1,5 @@
-atlassian_python_api==3.41.19
-boto3==1.36.2
-chainlit==2.2.1
+boto3
+requests
+beautifulsoup4
+chainlit
+atlassian-python-api
